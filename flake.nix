@@ -26,7 +26,7 @@
       #
       #   my-package = final.callPackage ./packages/my-package.nix { };
       #
-      goose = final.callPackage ./packages/goose.nix { };
+      goose-cli = final.callPackage ./packages/goose.nix { };
       opencode = final.callPackage ./packages/opencode.nix { };
     };
   };
