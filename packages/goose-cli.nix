@@ -1,15 +1,25 @@
 {pkgs, ...}:
 pkgs.stdenv.mkDerivation rec {
   pname = "goose-cli";
-  version = "1.1.4";
+  version = "1.2.0";
 
   src = pkgs.fetchzip {
-    url = "https://github.com/block/goose/releases/download/v${version}/goose-${pkgs.system}.tar.bz2";
+    url = "https://github.com/block/goose/releases/download/v${version}/${
+      {
+        "x86_64-linux" = "goose-x86_64-unknown-linux-gnu.tar.bz2";
+        "aarch64-linux" = "goose-aarch64-unknown-linux-gnu.tar.bz2";
+        "aarch64-darwin" = "goose-aarch64-apple-darwin.tar.bz2";
+        "x86_64-darwin" = "goose-x86_64-apple-darwin.tar.bz2";
+      }.${
+        pkgs.system
+      }
+    }";
     sha256 =
       {
-        "x86_64-linux" = "sha256-UNIdlDLJJ/phO+MrwUFG9IP5IYnszy6S2QpnfJItY54=";
-        "aarch64-linux" = "sha256-o4OgSkGGGL6Euzc4i8XQjdkUOFFMze2UE3jG/RWoW8w=";
-        "aarch64-darwin" = "sha256-OAQBRhQE45SARoz3faBzwBJVoQq7K4tfPK/pBsircL4=";
+        "x86_64-linux" = "sha256-Ps9+gwLb9V1OlDYTwK1cW7a7sodksXuKQbq7/GknKfo=";
+        "aarch64-linux" = "sha256-6NTNH/wsO8hCqGqkU5c8+DvJGcJqPqZZdXvQr2lzvqk=";
+        "aarch64-darwin" = "sha256-+myDPsgMKQo6IJFBznL20FCOXFOfdNW8LXM35PJ0Qwo=";
+        "x86_64-darwin" = "sha256-bqE9SkzlqrSAZGz4obBNscKnCk3M5BO/2uuIxAuwEFg=";
       }.${
         pkgs.system
       };
