@@ -15,10 +15,10 @@ pkgs.stdenv.mkDerivation rec {
       }
     }";
     sha256 = {
-      "x86_64-linux" = "sha256-Bj1JF2dUJUMR6IxgBXdLDP9GM1Q6COdpse5yFoGzr9Y=";
-      "aarch64-linux" = "sha256-stBCNm+QMAYMpNkdEksPlyzQU2x//CZ6gJ38nseutXE=";
-      "aarch64-darwin" = "sha256-fhKsELHBXP4rHl6XJgwvfP4qu78134RUwR2y8WinQhU=";
-      "x86_64-darwin" = "sha256-hOrO7gcLzN6OuLnnSgAbRenWCbY16fG9FggbwvIjSIc=";
+      "x86_64-linux" = "sha256-3xfNyRfT5Tcq/emRLTyM2oRHNZ4u075Lhkc/KEYmzeU=";
+      "aarch64-linux" = "sha256-OiH67kixkOH65fU1oCOHMdZU6fEsHJMcZNsvh3CvSLg=";
+      "aarch64-darwin" = "sha256-aPgPJogmhxkuEh3F9SUCwEJo6fKXNxRxH0RZupkosbY=";
+      "x86_64-darwin" = "sha256-pIPdq/1MzsCtfSPrRArym8kSSiLPFdMYUeEAUrjNokk=";
     }.${
       pkgs.system
     };

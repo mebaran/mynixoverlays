@@ -1,0 +1,50 @@
+version: "1.0.0"
+title: "Update Goose CLI"
+description: "Update the Goose CLI Nix expression with latest version and hashes"
+instructions: |
+  This recipe updates the Goose CLI Nix package definition with the latest version
+  and recalculates all platform hashes using nix store prefetch-file.
+  
+  Steps:
+  1. Check the latest version of Goose CLI on GitHub
+  2. Download each platform binary and calculate its hash
+  3. Update the Nix expression with new version (if needed) and hashes
+
+parameters:
+  - key: package_path
+    input_type: string
+    requirement: optional
+    default: "packages/goose-cli.nix"
+    description: "Path to the Nix package expression file"
+
+extensions:
+  - type: builtin
+    name: developer
+    timeout: 300
+    bundled: true
+
+activities:
+  - "Check current version in Nix expression"
+  - "Fetch latest version from GitHub releases"
+  - "Calculate platform hashes with nix store prefetch-file"
+  - "Update Nix expression with new version and hashes"
+
+prompt: |
+  Update the Goose CLI Nix expression at {{ package_path }} with the latest version 
+  and properly calculated hashes for all supported platforms.
+  
+  Implementation steps:
+  1. Read the current version from the Nix expression using the developer extension
+  2. Check GitHub for the latest release at https://api.github.com/repos/block/goose/releases/latest
+  3. If there's a newer version, prepare to update it
+  4. Calculate hashes for all platforms using nix store prefetch-file --json (apply --unpack if in fetchzip):
+     - x86_64-linux: https://github.com/block/goose/releases/download/v[VERSION]/goose-x86_64-unknown-linux-gnu.tar.bz2
+     - aarch64-linux: https://github.com/block/goose/releases/download/v[VERSION]/goose-aarch64-unknown-linux-gnu.tar.bz2
+     - aarch64-darwin: https://github.com/block/goose/releases/download/v[VERSION]/goose-aarch64-apple-darwin.tar.bz2
+     - x86_64-darwin: https://github.com/block/goose/releases/download/v[VERSION]/goose-x86_64-apple-darwin.tar.bz2
+  5. Use the developer extension to:
+     - Run shell commands to check versions and calculate hashes
+     - View the current Nix expression file
+     - Update the file with str_replace operations
+  6. Create a backup by copying the file before making changes
+  7. Report what changes were made (version update, which hashes changed, etc.)
