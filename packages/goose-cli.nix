@@ -1,7 +1,7 @@
 {pkgs, ...}:
 pkgs.stdenv.mkDerivation rec {
   pname = "goose-cli";
-  version = "1.4.0";
+  version = "1.6.0";
 
   src = pkgs.fetchzip {
     url = "https://github.com/block/goose/releases/download/v${version}/${
@@ -15,10 +15,10 @@ pkgs.stdenv.mkDerivation rec {
       }
     }";
     sha256 = {
-      "x86_64-linux" = "1as9srx93j5lhz2s1rybpw7mh1pnhqha7sr1q8bvp5zh9nafns8s";
-      "aarch64-linux" = "0ydsvdpix0c48b8w6n1cpbnnwy506chv70s2ddrv8g1w5r39501i";
-      "aarch64-darwin" = "131cwybsihwccm8d00k7scvmkbp6vlv0p4g7lpn6q9yws02hia30";
-      "x86_64-darwin" = "0rwzppwgpyrhxcvi7mk6flph8w7bwbjqjlqbdicwj8ymsf41ns87";
+      "x86_64-linux" = "1mmgnf0icwpfn5lyf21sahrldzqc9dvhaq4cx08l69alcwbljg86";
+      "aarch64-linux" = "0wdmmv3rxz4xh1x2dz3zdi9x0b4p1x5i47frlh60cc4hdwv45l5j";
+      "aarch64-darwin" = "05a2lxlg3chxq5a89prmpyxjmzkw5w62d5sy3qmzwp61n48aq4ky";
+      "x86_64-darwin" = "11s84grc46q82syz3s9mnq4xdsa53c04mrxrp27dxk0b0zpcxsl4";
     }.${
       pkgs.system
     };
