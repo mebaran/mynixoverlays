@@ -1,7 +1,7 @@
 {pkgs, ...}:
 pkgs.stdenv.mkDerivation rec {
   pname = "goose-cli";
-  version = "1.6.0";
+  version = "1.7.0";
 
   src = pkgs.fetchzip {
     url = "https://github.com/block/goose/releases/download/v${version}/${
@@ -15,10 +15,10 @@ pkgs.stdenv.mkDerivation rec {
       }
     }";
     sha256 = {
-      "x86_64-linux" = "sha256-Bj1JF2dUJUMR6IxgBXdLDP9GM1Q6COdpse5yFoGzr9Y=";
-      "aarch64-linux" = "sha256-stBCNm+QMAYMpNkdEksPlyzQU2x//CZ6gJ38nseutXE=";
-      "aarch64-darwin" = "sha256-fhKsELHBXP4rHl6XJgwvfP4qu78134RUwR2y8WinQhU=";
-      "x86_64-darwin" = "sha256-hOrO7gcLzN6OuLnnSgAbRenWCbY16fG9FggbwvIjSIc=";
+      "x86_64-linux" = "sha256-rmibRzkdPWI2zvPknVy2FaRq7BIfoLC+w13EESuUlE8=";
+      "aarch64-linux" = "sha256-AlajpIRuZg6G4CIWkvjF2XhESlhmu1qlxrdVUWSHklE=";
+      "aarch64-darwin" = "sha256-8WAR40B/gdW3kFYl/UO/4v8ULUDqxS3SqLF1r736h6k=";
+      "x86_64-darwin" = "sha256-2P8YDIVa4MB96Cv3EXvQOAvGJLsDrkk3aMS0dhMrtP8=";
     }.${
       pkgs.system
     };
@@ -44,5 +44,6 @@ pkgs.stdenv.mkDerivation rec {
     license = licenses.mit;
     platforms = platforms.linux ++ platforms.darwin;
     maintainers = [];
+    mainProgram = "goose";
   };
 }

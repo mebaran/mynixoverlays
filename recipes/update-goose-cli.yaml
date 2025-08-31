@@ -46,5 +46,4 @@ prompt: |
      - Run shell commands to check versions and calculate hashes
      - View the current Nix expression file
      - Update the file with str_replace operations
-  6. Create a backup by copying the file before making changes
-  7. Report what changes were made (version update, which hashes changed, etc.)
+  6. Report what changes were made (version update, which hashes changed, etc.)
