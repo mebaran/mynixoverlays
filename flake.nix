@@ -20,7 +20,7 @@
       goose-cli = final.callPackage ./packages/goose-cli.nix {};
       gemini-cli = callNpx final "gemini";
       opencode = callNpx final "opencode";
-      qwen = callNpx final "qwen";
+      qwen-code = callNpx final "qwen";
     };
 
     packages = forAllSystems (system: {
