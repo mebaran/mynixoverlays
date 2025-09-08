@@ -1,3 +1,3 @@
-To get the hash of a URL passed to fetchzip where stripRoot is False, run the following
+To get the hash of a URL passed to fetchzip where stripRoot is False, run the following:
 nix store prefetch-file --json --unpack $URL
 

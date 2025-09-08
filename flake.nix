@@ -20,10 +20,11 @@
       goose-cli = final.callPackage ./packages/goose-cli.nix {};
       gemini-cli = callNpx final "gemini";
       opencode = callNpx final "opencode";
+      qwen = callNpx final "qwen";
     };
 
     packages = forAllSystems (system: {
-      inherit (pkgsFor.${system}) goose-cli gemini-cli opencode;
+      inherit (pkgsFor.${system}) goose-cli gemini-cli opencode qwen;
     });
   };
 }
