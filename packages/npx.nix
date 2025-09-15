@@ -8,5 +8,5 @@
 in {
   opencode = npx "opencode" "opencode-ai@latest";
   gemini = npx "gemini" "@google/gemini-cli";
-  qwen = npx "qwen" "@qwen-code/qwen-code";
+  qwen-code = npx "qwen" "@qwen-code/qwen-code";
 }
