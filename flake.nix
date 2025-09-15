@@ -18,13 +18,13 @@
   in {
     overlays.default = final: prev: {
       goose-cli = final.callPackage ./packages/goose-cli.nix {};
-      gemini-cli = callNpx final "gemini";
+      gemini-cli = callNpx final "gemini-cli";
       opencode = callNpx final "opencode";
-      qwen-code = callNpx final "qwen";
+      qwen-code = callNpx final "qwen-code";
     };
 
     packages = forAllSystems (system: {
-      inherit (pkgsFor.${system}) goose-cli gemini-cli opencode qwen;
+      inherit (pkgsFor.${system}) goose-cli gemini-cli opencode qwen-code;
     });
   };
 }

@@ -7,6 +7,6 @@
     };
 in {
   opencode = npx "opencode" "opencode-ai@latest";
-  gemini = npx "gemini" "@google/gemini-cli";
+  gemini-cli = npx "gemini" "@google/gemini-cli";
   qwen-code = npx "qwen" "@qwen-code/qwen-code";
 }
